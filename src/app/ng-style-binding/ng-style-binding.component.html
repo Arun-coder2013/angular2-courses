@@ -1,0 +1,11 @@
+<div>
+  <button
+  [ngStyle]="{
+    'backgroundColor':isSelected ?'red':'blue',
+    'color':isSelected ?'black':'yellow'
+  }"
+  (click)="onClick()"
+  >
+  color me
+  </button>
+</div>

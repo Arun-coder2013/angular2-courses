@@ -1,0 +1,14 @@
+<form>
+  <input 
+    type="text" 
+    class="form-control"
+    (keyup.enter)="addUsernames(username)" #username>
+    <ul class="list-group">
+      <li
+        *ngFor="let username of usernames.controls" 
+        (click) = "removeUsername(username)"
+        class="list-group-item">
+        {{username.value}}
+      </li>
+    </ul>
+</form>

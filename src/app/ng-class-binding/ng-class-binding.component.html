@@ -1,0 +1,11 @@
+<div>
+  <span class="glyphicon"
+    [ngClass]="{
+      'glyphicon-star': isSelected,
+      'glyphicon-star-empty':!isSelected
+    }"
+    (click)="onClick()"
+  >
+  click me
+  </span>
+  </div>

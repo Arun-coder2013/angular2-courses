@@ -1,0 +1,34 @@
+
+<form [formGroup]="form">
+  <div class="form-group">
+    <label for="firstName">UserName</label>
+    <input 
+         formControlName="username"
+         type="text" 
+         id="firstName"
+         class="form-control"/>
+         <div *ngIf="username.pending">Checking username uniqueness....</div>
+        <div class="alert alert-danger" *ngIf="username.touched && !username.valid ">
+         <div *ngIf="username.errors.required"> username is required</div>
+         <div *ngIf="username.errors.minlength"> min lenghth should be 3</div>
+         <div *ngIf="username.errors.pattern"> Patten should be arun</div>
+         <div *ngIf="username.errors.cannotContainSpace"> User name should not contain space</div>
+         <div *ngIf="username.errors.uniqueUserName"> User name is already available</div>
+         
+        </div>
+  </div>
+    <div class="form-group">
+    <label for="Password">Password </label>
+    <input 
+        formControlName="password"
+        type="password" 
+        id="password"
+        class="form-control"/>
+         <div class="alert alert-danger" *ngIf="password.touched && !password.valid">
+             <div *ngIf="password.errors.required"> password is required</div>
+             <div *ngIf="password.errors.minlength"> minimum length should be 8</div>
+              <div *ngIf="password.errors.pattern"> Password should be arun</div>
+        </div>
+  </div>
+ <button class="btn btn-primary">submit</button>
+</form>

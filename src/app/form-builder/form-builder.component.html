@@ -1,0 +1,33 @@
+<form [formGroup]="form">
+  <label >Username </label>
+  <input 
+    type="text" 
+    class="form-control"
+    formControlName="username">
+    <div 
+      *ngIf="username.touched && !username.valid" 
+      class="alert alert-danger">
+      username is required
+    </div>
+  <label >Email</label>
+  <input 
+    type="text"
+     class="form-control"
+     formControlName="email">
+     <div 
+      *ngIf="email.touched && !email.valid"
+       class="alert alert-danger">
+      email is required
+    </div>
+  <label >Phone </label>
+    <input 
+      type="text"
+       class="form-control"
+       formControlName="phone">
+      <div 
+        *ngIf="phone.touched && !phone.valid"
+         class="alert alert-danger">
+          phone is required
+    </div> 
+    <button [disabled]="!form.valid" class="btn btn-success">login</button>
+</form> 

@@ -1,0 +1,77 @@
+<div class="container">
+<div class="jumbotron">
+<form ngForm #f="ngForm">
+  <div class="form-group">
+    <label for="firstName">First Name</label>
+    <input 
+        required
+        ngModel 
+        minlength="3"
+        pattern="arun"
+        maxlength="10"
+        name="firstName" 
+        type="text" 
+        id="firstName"
+        #firstName="ngModel" 
+        (change)="log(firstName)" 
+        class="form-control"/>
+        <div 
+          class="alert alert-danger" 
+          *ngIf="firstName.touched && !firstName.valid">
+          <div *ngIf="firstName.errors.required">First name is not valid</div>
+          <div *ngIf="firstName.errors.minlength">min length is {{firstName.errors.minlength.requiredLength}}</div>
+          <div *ngIf="firstName.errors.pattern">Pattern is arun</div>
+        </div>
+  </div>
+  <div class="form-group">
+    <label for="comments">Comments </label>
+    <textarea 
+      required
+      ngModel
+      minlength="4" 
+      maxlength="200"
+      pattern="Arun Kumar Rout"
+      name="comments" 
+      id="comments" cols="30" 
+      rows="10" 
+      #comments="ngModel"
+      class="form-control">
+   </textarea>
+    <div 
+          class="alert alert-danger" 
+          *ngIf="comments.touched && !comments.valid">
+           <div *ngIf="comments.errors.required">First name is not valid</div>
+          <div *ngIf="comments.errors.minlength">min length is {{comments.errors.minlength.requiredLength}}</div>
+          <div *ngIf="comments.errors.pattern">Pattern is arun</div>
+  </div>
+  </div>
+  <div>
+    <label>subscribe me</label>
+    <input type="checkbox"
+    ngModel
+    name="subscribe"> 
+  </div>
+  <div *ngFor="let x of gender">
+    <label for="gender">{{x.name}}</label>
+    <input type="radio"
+    ngModel
+    name="gender"
+    [value]="x.id">
+ </div>
+ <div class="form-group">
+   <label for="bookList">Select Book</label>
+   <select multiple ngModel name="bookList"
+         id="bookList"
+         class="form-control">
+      <option *ngFor="let book of books"
+       [value]="book.id">{{book.name}}
+       </option>    
+  </select>
+</div>
+  <div>
+    {{f.value | json}}
+  </div>
+ <button class="btn btn-primary" [disabled]="!f.valid">submit</button>
+</form>
+</div>
+</div>
