@@ -2,7 +2,9 @@
   <div class="container-fluid">
     <div class="colapse navbar-colapse">
       <div class= "nav navbar-nav ">
-     <li routerLinkActive="active current"><a routerLink="/followers">followers </a></li>
+     <li routerLinkActive="active current">
+       <a routerLink="/followers"
+          [queryParams]="{page:1 ,order:'latest'}">followers </a></li>
      <li routerLinkActive="active current"><a routerLink="/post">post </a></li>
     </div>
     </div>
