@@ -1,3 +1,4 @@
+import { GithumFollowersService } from './service/githum-followers.service';
 import { AppErrorHandler } from './common/error-handler.error';
 import {ErrorHandler} from'@angular/core';
 import { PostServiceService } from './service/post-service.service';
@@ -8,6 +9,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import {HttpModule} from '@angular/http';
+import {RouterModule} from '@angular/router';
 
 
 import { AppComponent } from './app.component';
@@ -34,6 +36,8 @@ import { OptimisticComponent } from './optimistic/optimistic.component';
 import { HomeComponent } from './home/home.component';
 import { FollowersComponent } from './followers/followers.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { GitHubProfileComponent } from './git-hub-profile/git-hub-profile.component';
 
 
 @NgModule({
@@ -64,18 +68,44 @@ import { NavbarComponent } from './navbar/navbar.component';
     OptimisticComponent,
     HomeComponent,
     FollowersComponent,
-    NavbarComponent
+    NavbarComponent,
+    NotFoundComponent,
+    GitHubProfileComponent
     
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot([
+      {
+        path:'',
+        component:HomeComponent
+      },
+      {
+        path:'followers/:username',
+        component:GitHubProfileComponent
+      },
+      {
+        path:'followers',
+        component:FollowersComponent
+      },
+      {
+        path:'post',
+        component:OptimisticComponent
+      },
+      {
+        path:'**',
+        component:NotFoundComponent
+      }
+    ])
+    
   ],
   providers: [
     PostServiceService,
-    {provide:ErrorHandler,useClass:AppErrorHandler}
+    {provide:ErrorHandler,useClass:AppErrorHandler},
+    GithumFollowersService
   ],
   bootstrap: [AppComponent]
 })

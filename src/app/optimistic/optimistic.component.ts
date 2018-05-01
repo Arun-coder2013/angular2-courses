@@ -16,20 +16,16 @@ export class OptimisticComponent implements OnInit {
 
   ngOnInit() {
      this.service.getAll()
-     .subscribe(
-       response => {
-          this.posts = response.json();
-          console.log(response.json());
-       });
+     .subscribe(posts => this.posts = posts);
+      
     }
 createPost(input: HTMLInputElement){
     let requestBody = {title:input.value}
     this.posts.splice(0,0,requestBody);
     this.service.create(requestBody)
     .subscribe(
-     res => {
-        requestBody['id'] = res.json().id;
-        console.log(res.json());
+     posts => {
+        requestBody['id'] = posts.id;
      },
      (error:AppError)=> {
          this.posts.splice(0,1);
@@ -41,9 +37,8 @@ createPost(input: HTMLInputElement){
 updatePost(post){
  this.service.update(post)
   .subscribe(
-    res =>{
-     console.log(res.json());
-    },
+    posts => this.posts = posts
+    ,
     (error:AppError) => {
          if (error instanceof BadInputError){
             alert('Bad Input Error');
@@ -56,8 +51,8 @@ deletePost(post){
   this.posts.splice(index,1);
  this.service.delete(post.id)
   .subscribe(
-    res =>{
-        console.log(res.json());
+    () =>{
+        console.log(post);
      },
      (error:AppError) => {
          this.posts.splice(index,0,post);
