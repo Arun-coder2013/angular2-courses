@@ -1,7 +1,7 @@
 <div>
  <span>Inbuild Pipes </span><br>
     {{pipesObj.title|lowercase |uppercase |lowercase}} <br>
-    {{pipesObj.title|summary:3:true}} <br>
+    {{pipesObj.title|summary:10:true:}} <br>
     {{ pipesObj.birthday | date }} <br>
    {{ pipesObj.birthday | date:"dd/MM/yyyy" }} <br>
    {{ pipesObj.birthday | date:"MM/dd/yyyy" }} <br>
@@ -10,14 +10,14 @@
 {minIntegerDigits}.{minFractionDigits}-{maxFractionDigits}-->
 <!--locale is a string defining the locale to use-->
    {{ pipesObj.e | number }} <br>
-   {{ pipesObj.e | number:'1.1-1' }} <br>
+   {{ pipesObj.e | number:'3.1-4' }} <br>
 
    <!--number_expression | currency[:currencyCode[:display[:digitInfo[:locale]]]]-->
    <!--digitInfo is a string which has a following format: 
 {minIntegerDigits}.{minFractionDigits}-{maxFractionDigits}-->
 <!--locale is a string defining the locale to use-->
    {{ pipesObj.e | number }} <br>
-   {{ pipesObj.e | currency:'AUD' }} <br>
+   {{ pipesObj.e | currency:'AUD':true}} <br>
   
 
 </div>
