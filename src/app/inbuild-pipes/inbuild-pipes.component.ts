@@ -9,7 +9,7 @@ export class InbuildPipesComponent implements OnInit {
 pipesObj ={
   birthday : new Date(1988, 3, 15),
   e: 2.718281828459045,
-  title:"Angaular Pipes"
+  title:"The rise of the apes"
 }
 
   constructor() { }

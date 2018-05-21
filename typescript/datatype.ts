@@ -5,18 +5,19 @@ a=20;
 let b: string;
 b='Arun';
 //here type is array of number.
-let c:number[]=[12,23,33,5];
+let c:string[] =['Arun','Rout'];
 //here type is an object
-let d:{x:10,y:20};
+let d:{name:'Arun',title:'Rout'};
 //here type is any, by default type is any.it can accept 
 //anything like var keyword in javascript.
 let e;
 e=[12,3,4,5];
 //here type is constant 
   const f = 10;
-//type is enum. to declare multiple constants 
-  enum color {red,green,blue};
+  //type is enum. to declare multiple constants 
+  enum color {purple,red=0,green=1,blue=2};
   //to access enum 
- console.log(color.blue);
+  let RedColor = color.red;
+ console.log(RedColor);
 
 
