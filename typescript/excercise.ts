@@ -1,7 +1,7 @@
 
 export class LikeComponents{
     count=10;
-    isSelected=true;
+    isSelected=false;
     onClicked(){
         this.count += this.isSelected ? -1:1;
         this.isSelected = !this.isSelected;
@@ -10,5 +10,3 @@ export class LikeComponents{
     }
 }
 
-let like = new LikeComponents();
-like.onClicked();

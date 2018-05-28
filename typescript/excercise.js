@@ -3,7 +3,7 @@ exports.__esModule = true;
 var LikeComponents = /** @class */ (function () {
     function LikeComponents() {
         this.count = 10;
-        this.isSelected = true;
+        this.isSelected = false;
     }
     LikeComponents.prototype.onClicked = function () {
         this.count += this.isSelected ? -1 : 1;
@@ -14,5 +14,3 @@ var LikeComponents = /** @class */ (function () {
     return LikeComponents;
 }());
 exports.LikeComponents = LikeComponents;
-var like = new LikeComponents();
-like.onClicked();

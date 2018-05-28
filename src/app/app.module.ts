@@ -1,3 +1,5 @@
+import { MajhiServiceService } from './majhi-service.service';
+import { ExampleService } from './example-test/example.service';
 import { GithumFollowersService } from './service/githum-followers.service';
 import { AppErrorHandler } from './common/error-handler.error';
 import {ErrorHandler} from'@angular/core';
@@ -6,7 +8,7 @@ import { NgModelTwoWayBindingDemoComponent } from './event-binding/ngModel-twowa
 import { TwoWayTemplateBindingComponent } from './event-binding/two-way-binding.component';
 import { TemplateVariableComponent } from './event-binding/template-variable.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import {RouterModule} from '@angular/router';
@@ -38,6 +40,9 @@ import { FollowersComponent } from './followers/followers.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { GitHubProfileComponent } from './git-hub-profile/git-hub-profile.component';
+import { ExampleTestComponent } from './example-test/example-test.component';
+import { MajhaComponentComponent } from './majha-component/majha-component.component';
+import { InputBoxComponent } from './input-box/input-box.component';
 
 
 @NgModule({
@@ -70,7 +75,10 @@ import { GitHubProfileComponent } from './git-hub-profile/git-hub-profile.compon
     FollowersComponent,
     NavbarComponent,
     NotFoundComponent,
-    GitHubProfileComponent
+    GitHubProfileComponent,
+    ExampleTestComponent,
+    MajhaComponentComponent,
+    InputBoxComponent
     
   ],
   imports: [
@@ -104,8 +112,11 @@ import { GitHubProfileComponent } from './git-hub-profile/git-hub-profile.compon
   ],
   providers: [
     PostServiceService,
+    MajhiServiceService,
     {provide:ErrorHandler,useClass:AppErrorHandler},
-    GithumFollowersService
+    GithumFollowersService,
+    
+    ExampleService
   ],
   bootstrap: [AppComponent]
 })

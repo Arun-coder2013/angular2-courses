@@ -1,7 +1,8 @@
-var noParamFn = function () { console.log('No parameter function'); };
+var noParamFn = function () { return console.log('No parameter function'); };
 var oneParamFn = function (x) { console.log('One parameter function', x); };
 var oneParamFnAlt1 = function (x) { return console.log('One parameter function', x); };
 var oneParamFnAlt2 = function (x) { return console.log('One explicit parameter function', x); };
+var twoParamFnAlt2 = function (x, y) { return console.log('Two  parameter function', x, y); };
 noParamFn();
 oneParamFn('Arun');
 oneParamFn(10);

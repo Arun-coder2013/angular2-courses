@@ -6,9 +6,9 @@ function log() {
 }
 log();
 function log1() {
-    for (var i = 0; i < 5; i++) {
-        console.log(i);
+    for (var index = 0; index < 5; index++) {
+        console.log(index);
     }
-    console.log(i);
+    console.log(index);
 }
 log1();
