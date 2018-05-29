@@ -1,6 +1,9 @@
 <ul>
-  <li *ngFor="let pustak of pustake">{{pustak.p1}}
+  <li *ngFor="let pustak of pustake">
+    {{pustak.p1}}
     {{pustak.p2}}
     {{pustak.p3}}
+    {{pustak.hubby?.music}}
+    {{pustak.hubby?.books}}
   </li>
 </ul>

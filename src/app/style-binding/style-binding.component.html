@@ -1,9 +1,16 @@
 <div>
-    <button
-     [style.backgroundColor]="isSelected ? 'red':'blue'"
-     [style.color] ="isSelected ? 'black':'yellow'"
+    <button   
+     [style.backgroundColor]="isSelected ? 'white':'blue'"
+     [style.color] ="isSelected ? 'green':'red'"
     (click)="onClick()"
     >
       color me  
     </button>
+    <div>
+      <span class="glyphicon glyphicon-heart"
+      [style.color]="!isSelected? 'red':'yellow'"></span>
+      
+      <span class="glyphicon glyphicon-heart"
+      [style.color]="isSelected? 'red':'yellow'"></span>
+      </div>
 </div>

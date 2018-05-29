@@ -8,8 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class InbuildPipesComponent implements OnInit {
 pipesObj ={
   birthday : new Date(1988, 3, 15),
-  e: 2.718281828459045,
-  title:"The rise of the apes"
+  x: 2.718281828459045,
+  title:"545789023457893 "
 }
 
   constructor() { }

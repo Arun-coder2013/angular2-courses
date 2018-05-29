@@ -43,6 +43,7 @@ import { GitHubProfileComponent } from './git-hub-profile/git-hub-profile.compon
 import { ExampleTestComponent } from './example-test/example-test.component';
 import { MajhaComponentComponent } from './majha-component/majha-component.component';
 import { InputBoxComponent } from './input-box/input-box.component';
+import { ClassBindingExampleComponent } from './class-binding-example/class-binding-example.component';
 
 
 @NgModule({
@@ -78,7 +79,8 @@ import { InputBoxComponent } from './input-box/input-box.component';
     GitHubProfileComponent,
     ExampleTestComponent,
     MajhaComponentComponent,
-    InputBoxComponent
+    InputBoxComponent,
+    ClassBindingExampleComponent
     
   ],
   imports: [

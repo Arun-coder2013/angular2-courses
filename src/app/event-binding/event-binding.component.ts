@@ -6,9 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./event-binding.component.css']
 })
 export class EventBindingComponent implements OnInit {
-
+  x="sidharth";
   onClick($event){
-    console.log('Event triggered'+" "+$event.target.value);
+    this.x= $event.target.value;
+    console.log('Event triggered'+" "+this.x);
+    // console.log('Event triggered'+" "+$event.target);
+    // console.log('Event triggered'+" "+x.value);
   }
   constructor() { }
 
