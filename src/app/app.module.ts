@@ -44,6 +44,9 @@ import { ExampleTestComponent } from './example-test/example-test.component';
 import { MajhaComponentComponent } from './majha-component/majha-component.component';
 import { InputBoxComponent } from './input-box/input-box.component';
 import { ClassBindingExampleComponent } from './class-binding-example/class-binding-example.component';
+import { TitleCasePipe } from './title-case.pipe';
+import { PipeTestComponent } from './pipe-test/pipe-test.component';
+import { TestTitleCasePipe } from './pipe-test/test-title-case.pipe';
 
 
 @NgModule({
@@ -80,7 +83,10 @@ import { ClassBindingExampleComponent } from './class-binding-example/class-bind
     ExampleTestComponent,
     MajhaComponentComponent,
     InputBoxComponent,
-    ClassBindingExampleComponent
+    ClassBindingExampleComponent,
+    TitleCasePipe,
+    PipeTestComponent,
+    TestTitleCasePipe
     
   ],
   imports: [
