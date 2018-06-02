@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
-  password="password";
+  username="Saddam";
   checkbox="checkbox"
+  passwprd="password"
 }

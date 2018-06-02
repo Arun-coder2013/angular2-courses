@@ -6,12 +6,12 @@ import { Component, OnInit,Input } from '@angular/core';
   styleUrls: ['./input-box.component.css']
 })
 export class InputBoxComponent implements OnInit {
-  @Input()
-  myLabel:string="username";
-  @Input()
+  @Input('label')
+  ArunLbl:string="username";
+  @Input('type')
   myType:string='text';
-  @Input()
-  myName:string='username';
+  @Input('name')
+  myName:string='password';
   constructor() { }
 
   ngOnInit() {

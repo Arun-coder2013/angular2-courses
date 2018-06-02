@@ -1,0 +1,28 @@
+
+<app-radio-selection [all]="getAllEmployeeCount()"
+                      [male]="getMaleEmployeeCount()"
+                      [female]="getFemaleEmployeeCount()"
+                      (radioButtonSelectionChange)="onSelectedEmployeeCountChange($event)"
+                      ></app-radio-selection>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Code</th>
+      <th scope="col">Name</th>
+      <th scope="col">Gender</th>
+      <th scope="col">Salary</th>
+      <th scope="col">Date of Joining</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngFor='let employee of employees'>
+    <tr  *ngIf='selectedEmployeeCountValue =="all" || selectedEmployeeCountValue == employee.gender'>
+      <td>{{employee.code}}</td>
+      <td>{{employee.name}}</td>
+      <td>{{employee.gender}}</td>
+      <td>{{employee.salary | currency:'INR'}}</td>
+      <td>{{employee.doj}}</td>
+    </tr>
+    </ng-container>
+  </tbody>
+</table>

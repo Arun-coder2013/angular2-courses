@@ -47,6 +47,10 @@ import { ClassBindingExampleComponent } from './class-binding-example/class-bind
 import { TitleCasePipe } from './title-case.pipe';
 import { PipeTestComponent } from './pipe-test/pipe-test.component';
 import { TestTitleCasePipe } from './pipe-test/test-title-case.pipe';
+import { FavComponent } from './fav/fav.component';
+import { TwitterComponent } from './twitter/twitter.component';
+import { ReusableComponent } from './reusable/reusable.component';
+import { RadioSelectionComponent } from './reusable/radio-selection/radio-selection.component';
 
 
 @NgModule({
@@ -86,7 +90,11 @@ import { TestTitleCasePipe } from './pipe-test/test-title-case.pipe';
     ClassBindingExampleComponent,
     TitleCasePipe,
     PipeTestComponent,
-    TestTitleCasePipe
+    TestTitleCasePipe,
+    FavComponent,
+    TwitterComponent,
+    ReusableComponent,
+    RadioSelectionComponent
     
   ],
   imports: [
